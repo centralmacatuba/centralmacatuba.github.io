@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre - Central Macatuba</title>
+  <link rel="stylesheet" href="https://macatuba.eliasempresas.com/assets/styles/footer.css">
+  <link rel="stylesheet" href="https://macatuba.eliasempresas.com/assets/jornal/styles/style.css">
+  <style>
+    body { font-family: Arial, sans-serif; }
+    main { max-width: 1000px; margin: 30px auto; padding: 20px; }
+    h2 { color: #f50000; margin-top: 40px; }
+    h3 { margin-top: 20px; }
+    section { margin-bottom: 40px; }
+    ul { margin-left: 20px; }
+    .quick-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .quick-links a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #333;
+      font-size: 14px;
+    }
+    .quick-links a img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 5px;
+    }
+    .quick-links a:hover {
+      color: #f50000;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <h1><a href="index.html">Central Macatuba</a></h1>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Links rápidos -->
+  <div class="quick-links">
+    <a href="#jornal"><img src="https://macatuba.eliasempresas.com/ARQUIVOS/IMAGENS/JORNAL/logo_pequeno.svg" alt="Jornal">Jornal</a>
+    <a href="#tempo"><img src="https://macatuba.eliasempresas.com/ARQUIVOS/IMAGENS/TEMPO/tempo_pequeno.svg" alt="Tempo">Tempo</a>
+    <a href="#mapa"><img src="https://macatuba.eliasempresas.com/ARQUIVOS/IMAGENS/MAPA/logo_pequeno.svg" alt="Mapa">Mapa</a>
+    <a href="#informacoes"><img src="https://macatuba.eliasempresas.com/ARQUIVOS/IMAGENS/INFORMACOES/logo_pequeno.svg" alt="Informações">Informações</a>
+    <a href="#sos"><img src="https://macatuba.eliasempresas.com/ARQUIVOS/IMAGENS/SOS/logo_pequeno.svg" alt="SOS">SOS</a>
+  </div>
+
+  <!-- Sobre a Central -->
+  <section id="central">
+    <h2>Sobre a Central Macatuba</h2>
+    <p>A <strong>Central Macatuba</strong> foi criada para oferecer serviços gratuitos ao município de Macatuba, unindo informação, utilidade e comunidade em um só lugar.</p>
+    <h3>Equipe</h3>
+    <p>Todos os serviços são mantidos por uma pessoa responsável pela <strong>Elias Empresas</strong>, com a colaboração de toda a comunidade que contribui com informações e dados.</p>
+  </section>
+
+  <!-- Jornal Macatuba -->
+  <section id="jornal">
+    <h2>Jornal Macatuba</h2>
+    <p>O Jornal Macatuba traz notícias locais e regionais com compromisso com a verdade e base no slogan: <em>"A notícia de Macatuba, do povo para o povo."</em></p>
+    <h3>Equipe e funcionamento</h3>
+    <p>Gerido por uma pessoa da <strong>Elias Empresas</strong>, com contribuições de usuários. Notícias são verificadas pela <strong>IA EE</strong> e, quando necessário, por confirmação humana.</p>
+  </section>
+
+  <!-- Tempo Macatuba -->
+  <section id="tempo">
+    <h2>Tempo Macatuba</h2>
+    <p>O Tempo Macatuba oferece informações meteorológicas em tempo real para a cidade, gratuito e acessível a todos.</p>
+    <h3>Funcionalidades</h3>
+    <ul>
+      <li>Exibição do clima atual e previsões futuras.</li>
+      <li>Dados coletados e armazenados em tempo real em nosso servidor.</li>
+      <li>Serviço mantido por uma pessoa da <strong>Elias Empresas</strong>.</li>
+    </ul>
+  </section>
+
+  <!-- Mapa Macatuba -->
+  <section id="mapa">
+    <h2>Mapa Macatuba</h2>
+    <p>O Mapa Macatuba permite que todos vejam a cidade, seus pontos de interesse e adicionem novos locais de forma gratuita.</p>
+    <h3>Como funciona</h3>
+    <ul>
+      <li>Visualização de todos os pontos cadastrados.</li>
+      <li>Adição de novos pontos com nome, tipo e descrição.</li>
+      <li>Pontos adicionados são verificados pela Central Macatuba para garantir precisão.</li>
+    </ul>
+  </section>
+
+  <!-- Informações Macatuba -->
+  <section id="informacoes">
+    <h2>Informações Macatuba</h2>
+    <p>Serviço que disponibiliza informações úteis sobre serviços públicos, contatos, horários e eventos em Macatuba.</p>
+    <h3>Objetivo</h3>
+    <p>Centralizar informações relevantes em um único lugar, mantendo tudo atualizado e acessível gratuitamente.</p>
+  </section>
+
+  <!-- SOS Macatuba -->
+  <section id="sos">
+    <h2>SOS Macatuba</h2>
+    <p>Serviço de alerta e suporte à população, informando emergências, ocorrências e situações críticas na cidade.</p>
+    <h3>Como funciona</h3>
+    <ul>
+      <li>Envio de alertas em tempo real.</li>
+      <li>Dados verificados pela Central Macatuba.</li>
+      <li>Disponível para todos os moradores de Macatuba.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+<?php echo file_get_contents('https://macatuba.eliasempresas.com/assets/footer.php'); ?>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Macatuba</title>
+    <link rel="stylesheet" href="https://macatuba.eliasempresas.com/macatuba.eliasempresas.com/styles/style.css">
+    <link rel="stylesheet" href="https://macatuba.eliasempresas.com/macatuba.eliasempresas.com/styles/footer.css">
+    <style>
+        .hero {
+            background-color: #f50000;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .servicos {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .servico-card {
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .servico-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .servico-card img.logo-normal {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+        .servico-card img.logo-compact {
+            width: 50px;
+            margin-bottom: 10px;
+        }
+        .servico-card h3 {
+            color: #f50000;
+            margin-bottom: 10px;
+        }
+        .servico-card p {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #444;
+        }
+        .servico-card a {
+            display: inline-block;
+            padding: 10px 16px;
+            background: #f50000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+        .servico-card a:hover {
+            background: #d40000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><a href="index.html">Central Macatuba</a></h1>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Central Macatuba</h1>
+        <p>Serviços gratuitos para todos em Macatuba, integrando informação, utilidade e comunidade em um só lugar.</p>
+    </section>
+
+    <!-- Serviços -->
+    <main>
+        <section class="servicos">
+
+            <!-- Jornal Macatuba -->
+            <div class="servico-card">
+                <img src="https://macatuba.eliasempresas.com/ARQUIVOS/IMAGENS/JORNAL/logo.svg" alt="Jornal Macatuba Logo" class="logo-normal">
+                <img src="https://macatuba.eliasempresas.com/ARQUIVOS/IMAGENS/JORNAL/logo_pequena.svg" alt="Jornal Macatuba Logo Pequena" class="logo-compact">
+                <h3>Jornal Macatuba</h3>
+                <p>A notícia de Macatuba, do povo para o povo.</p>
+                <a href="jornal/index.html">Acessar</a>
+            </div>
+
+            <!-- Tempo Macatuba -->
+            <div class="servico-card">
+                <img src="https://macatuba.eliasempresas.com/ARQUIVOS/IMAGENS/TEMPO/logo_pequena.svg" alt="Tempo Macatuba Logo" class="logo-normal">
+                <img src="https://macatuba.eliasempresas.com/ARQUIVOS/IMAGENS/TEMPO/logo_pequena.svg" alt="Tempo Macatuba Logo Pequena" class="logo-compact">
+                <h3>Tempo Macatuba</h3>
+                <p>O clima de Macatuba em tempo real, grátis e acessível.</p>
+                <a href="tempo/index.php">Acessar</a>
+            </div>
+
+            <!-- Mapa Macatuba -->
+            <div class="servico-card">
+                <img src="https://macatuba.eliasempresas.com/ARQUIVOS/IMAGENS/MAPA/logo.svg" alt="Mapa Macatuba Logo" class="logo-normal">
+                <img src="https://macatuba.eliasempresas.com/ARQUIVOS/IMAGENS/MAPA/logo_pequena.svg" alt="Mapa Macatuba Logo Compacta" class="logo-compact">
+                <h3>Mapa Macatuba</h3>
+                <p>Encontre tudo em Macatuba de forma simples e gratuita.</p>
+                <a href="mapa/index.php">Acessar</a>
+            </div>
+
+            <!-- Informações Macatuba -->
+            <div class="servico-card">
+                <img src="https://macatuba.eliasempresas.com/ARQUIVOS/IMAGENS/INFORMACOES/logo.svg" alt="Informações Macatuba Logo" class="logo-normal">
+                <img src="https://macatuba.eliasempresas.com/ARQUIVOS/IMAGENS/INFORMACOES/logo_pequena.svg" alt="Informações Macatuba Logo Compacta" class="logo-compact">
+                <h3>Informações Macatuba</h3>
+                <p>Tudo que você precisa saber sobre Macatuba, grátis e acessível.</p>
+                <a href="informacoes/index.html">Acessar</a>
+            </div>
+
+            <!-- SOS Macatuba -->
+            <div class="servico-card">
+                <img src="https://macatuba.eliasempresas.com/ARQUIVOS/IMAGENS/SOS/logo.svg" alt="SOS Macatuba Logo" class="logo-normal">
+                <img src="https://macatuba.eliasempresas.com/ARQUIVOS/IMAGENS/SOS/logo_pequena.svg" alt="SOS Macatuba Logo Compacta" class="logo-compact">
+                <h3>SOS Macatuba</h3>
+                <p>Ajuda rápida e gratuita para todos em Macatuba.</p>
+                <a href="sos/index.html">Acessar</a>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+<?php echo file_get_contents('https://macatuba.eliasempresas.com/assets/footer.php'); ?>
+</footer>
+
+</body>
+</html>
