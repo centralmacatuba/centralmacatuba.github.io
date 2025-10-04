@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre - Tempo Macatuba</title>
+  <link rel="stylesheet" href="https://macatuba.eliasempresas.com/assets/styles/footer.css">
+  <link rel="stylesheet" href="https://macatuba.eliasempresas.com/assets/tempo/styles/style.css">
+  <style>
+    main { max-width: 900px; margin: 30px auto; padding: 20px; font-family: Arial, sans-serif; }
+    h2 { color: #f50000; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <h1><a href="index.php">Tempo Macatuba</a></h1>
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="index.php">Inicio</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Sobre o Tempo Macatuba</h2>
+    <p>O Tempo Macatuba é um serviço gratuito da <strong>Central Macatuba</strong> que fornece informações meteorológicas atualizadas para o município de Macatuba.</p>
+    <h3>Funcionalidades</h3>
+    <ul>
+      <li>Exibição do clima atual e previsões futuras.</li>
+      <li>Dados coletados em tempo real e armazenados em banco de dados local.</li>
+      <li>Informações acessíveis gratuitamente para todos os usuários.</li>
+    </ul>
+    <h3>Equipe</h3>
+    <p>O serviço é mantido por uma pessoa responsável pela <strong>Central Macatuba</strong>, garantindo que todos os dados sejam confiáveis e atualizados constantemente.</p>
+  </section>
+</main>
+
+<footer>
+<?php echo file_get_contents('https://macatuba.eliasempresas.com/assets/footer.php'); ?>
+</footer>
+
+
+</body>
+</html>
