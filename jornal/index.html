@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - Jornal Macatuba</title>
+  <link rel="stylesheet" href="https://macatuba.eliasempresas.com/assets/jornal/styles/style.css">
+  <link rel="stylesheet" href="https://macatuba.eliasempresas.com/assets/styles/footer.css">
+</head>
+<body>
+<header>
+  <div class="logo">
+    <h1><a href="index.html">Jornal Macatuba</a></h1>
+  </div>
+
+  <section class="pesquisa">
+    <form action="pesquisa.php" method="get" class="pesquisa-form">
+      <input type="text" name="q" placeholder="Pesquisar notícias..." required>
+      <select name="campo">
+        <option value="tudo">Tudo</option>
+        <option value="titulo">Título</option>
+        <option value="subtitulo">Subtítulo</option>
+        <option value="conteudo">Texto</option>
+      </select>
+      <button type="submit">Pesquisar</button>
+    </form>
+  </section>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="noticias.php">Notícias</a></li>
+      <li><a href="enviar.php">Enviar Notícia</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>Todas as Notícias</h2>
+    <div id="lista-noticias">Carregando...</div>
+  </section>
+</main>
+
+<footer>
+<?php echo file_get_contents('https://macatuba.eliasempresas.com/assets/footer.php'); ?>
+</footer>
+
+<script>
+async function carregarNoticias() {
+    try {
+        const url = "https://macatuba.eliasempresas.com/api/jornal/verificar.php?segredo=MACATUBAAPI-jornalSEGREDO&funcao=todas";
+        const response = await fetch(url);
+        const noticias = await response.json();
+
+        const container = document.getElementById("lista-noticias");
+        container.innerHTML = "";
+
+        if(!Array.isArray(noticias) || noticias.length === 0){
+            container.innerHTML = "<p>Nenhuma notícia disponível.</p>";
+            return;
+        }
+
+        noticias.forEach(noticia => {
+            container.innerHTML += `
+                <article data-id="${noticia.id}">
+                    <h3>${noticia.titulo}</h3>
+                    <h4>${noticia.subtitulo ?? ""}</h4>
+                    <p>${noticia.conteudo.substring(0,200)}...</p>
+                    <small>Criador: ${noticia.criador} | Publicado em: ${noticia.data_publicacao}</small><br>
+                    <a href="noticias.php?id=${noticia.id}">Leia mais</a>
+                </article>
+                <hr>
+            `;
+        });
+
+        adicionarBotoesSalvar();
+    } catch(err){
+        console.error("Erro ao carregar notícias:", err);
+        document.getElementById("lista-noticias").innerHTML = "<p>Erro ao carregar notícias.</p>";
+    }
+}
+
+carregarNoticias();
+
+// --- Script de listas ---
+const STORAGE_KEY = "jornal_macatuba";
+
+function getStorage() {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{"listas":{}}');
+}
+
+function saveStorage(data) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function adicionarListaItem(noticia){
+    const data = getStorage();
+    let listaNome = prompt("Digite o nome da lista para salvar a notícia:");
+    if(!listaNome) return;
+    if(!data.listas[listaNome]) data.listas[listaNome]=[];
+    if(!data.listas[listaNome].some(i=>i.id==noticia.id)){
+        data.listas[listaNome].push(noticia);
+        saveStorage(data);
+        alert("Notícia adicionada à lista "+listaNome);
+    } else {
+        alert("Notícia já está na lista");
+    }
+}
+
+function adicionarBotoesSalvar(){
+    document.querySelectorAll("article").forEach(article=>{
+        if(article.querySelector(".btn-salvar")) return;
+        const btn = document.createElement("button");
+        btn.innerText = "Salvar na Lista";
+        btn.className="btn-salvar";
+        btn.onclick = ()=>{
+            const noticia = {
+                id: article.dataset.id,
+                titulo: article.querySelector("h3")?.innerText || "",
+                subtitulo: article.querySelector("h4")?.innerText || "",
+                criador: article.querySelector("small")?.innerText || "",
+                data: ""
+            };
+            adicionarListaItem(noticia);
+        };
+        article.appendChild(btn);
+    });
+}
+</script>
+</body>
+</html>

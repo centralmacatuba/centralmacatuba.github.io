@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com o Jornal Macatuba">
+    <title>Contato - Jornal Macatuba</title>
+  <link rel="stylesheet" href="https://macatuba.eliasempresas.com/assets/styles/footer.css">
+    <link rel="stylesheet" href="https://macatuba.eliasempresas.com/assets/jornal/styles/style.css">
+
+</head>
+<body>
+    <!-- Cabeçalho -->
+<header>
+  <div class="logo">
+    <h1><a href="index.html">Jornal Macatuba</a></h1>
+  </div>
+
+  <!-- Bloco de Pesquisa Jornal Macatuba -->
+  <section class="pesquisa">
+    <form action="pesquisa.php" method="get" class="pesquisa-form">
+      <input type="text" name="q" placeholder="Pesquisar notícias..." required>
+      <select name="campo">
+        <option value="tudo">Tudo</option>
+        <option value="titulo">Título</option>
+        <option value="subtitulo">Subtítulo</option>
+        <option value="conteudo">Texto</option>
+      </select>
+      <button type="submit">Pesquisar</button>
+    </form>
+  </section>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="noticias.php">Notícias</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+    <main>
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <form action="/enviar" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+      <footer id="footer"></footer>
+      <footer>
+<?php echo file_get_contents('https://macatuba.eliasempresas.com/assets/footer.php'); ?>
+</footer>
+
+</body>
+</html>

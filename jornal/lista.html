@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listas - Jornal Macatuba</title>
+<link rel="stylesheet" href="https://macatuba.eliasempresas.com/assets/jornal/styles/style.css">
+<link rel="stylesheet" href="https://macatuba.eliasempresas.com/assets/styles/footer.css">
+<style>
+  body { padding:20px; font-family:Arial, sans-serif; background:#f5f5f5; }
+  h1,h2 { color:#f50000; }
+  .lista { background:#fff; padding:15px; margin-bottom:10px; border-radius:8px; }
+  .item { padding:5px 0; border-bottom:1px solid #ddd; display:flex; justify-content:space-between; align-items:center; }
+  button { margin-left:5px; cursor:pointer; }
+  .import-export { margin-top:20px; }
+  textarea { width:100%; height:150px; }
+</style>
+</head>
+<body>
+<header>
+<h1>Jornal Macatuba - Listas</h1>
+<a href="index.html">← Voltar</a>
+</header>
+
+<main>
+<section>
+<h2>Criar Nova Lista</h2>
+<input type="text" id="nova-lista-nome" placeholder="Nome da lista">
+<button onclick="criarLista()">Criar</button>
+</section>
+
+<section>
+<h2>Listas Existentes</h2>
+<div id="listas-container">Carregando...</div>
+</section>
+
+<section class="import-export">
+<h2>Exportar / Importar Listas</h2>
+<button onclick="exportarListas()">Exportar Todas</button>
+<textarea id="listas-json" placeholder="Cole JSON aqui para importar"></textarea>
+<button onclick="importarListas()">Importar</button>
+</section>
+</main>
+
+<footer>
+<?php echo file_get_contents('https://macatuba.eliasempresas.com/assets/footer.php'); ?>
+</footer>
+
+<script>
+const STORAGE_KEY = "jornal_macatuba";
+
+function getStorage() {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{"listas":{}}');
+}
+
+function saveStorage(data) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function atualizarLista() {
+    const container = document.getElementById("listas-container");
+    const data = getStorage();
+    container.innerHTML = "";
+    const params = new URLSearchParams(window.location.search);
+    const listaFiltro = params.get("lista");
+
+    if(Object.keys(data.listas).length === 0){
+        container.innerHTML = "<p>Nenhuma lista criada.</p>";
+        return;
+    }
+
+    Object.keys(data.listas).forEach(nome => {
+        if(listaFiltro && listaFiltro !== nome) return;
+        const div = document.createElement("div");
+        div.className = "lista";
+        div.innerHTML = `<h3>${nome} (${data.listas[nome].length} itens)</h3>`;
+        data.listas[nome].forEach((item,i)=>{
+            const itemDiv = document.createElement("div");
+            itemDiv.className = "item";
+            itemDiv.innerHTML = `<span>${item.titulo}</span><div>
+                <button onclick="removerItem('${nome}',${i})">Remover</button>
+            </div>`;
+            div.appendChild(itemDiv);
+        });
+        const actions = document.createElement("div");
+        actions.innerHTML = `<button onclick="removerLista('${nome}')">Excluir Lista</button>
+                             <button onclick="exportarLista('${nome}')">Exportar</button>`;
+        div.appendChild(actions);
+        container.appendChild(div);
+    });
+}
+
+function criarLista(){
+    const nome = document.getElementById("nova-lista-nome").value.trim();
+    if(!nome) return alert("Digite um nome para a lista");
+    const data = getStorage();
+    if(data.listas[nome]) return alert("Lista já existe");
+    data.listas[nome] = [];
+    saveStorage(data);
+    document.getElementById("nova-lista-nome").value="";
+    atualizarLista();
+}
+
+function removerLista(nome){
+    if(!confirm("Excluir lista "+nome+"?")) return;
+    const data = getStorage();
+    delete data.listas[nome];
+    saveStorage(data);
+    atualizarLista();
+}
+
+function removerItem(lista,i){
+    const data = getStorage();
+    data.listas[lista].splice(i,1);
+    saveStorage(data);
+    atualizarLista();
+}
+
+function exportarListas(){
+    const data = getStorage();
+    const json = JSON.stringify(data.listas,null,2);
+    document.getElementById("listas-json").value = json;
+}
+
+function exportarLista(nome){
+    const data = getStorage();
+    const json = JSON.stringify({[nome]: data.listas[nome]},null,2);
+    document.getElementById("listas-json").value = json;
+}
+
+function importarListas(){
+    try{
+        const json = document.getElementById("listas-json").value.trim();
+        if(!json) return alert("Cole o JSON para importar");
+        const novas = JSON.parse(json);
+        const data = getStorage();
+        data.listas = {...data.listas, ...novas};
+        saveStorage(data);
+        atualizarLista();
+        alert("Listas importadas com sucesso!");
+    }catch(e){
+        alert("JSON inválido");
+        console.error(e);
+    }
+}
+
+atualizarLista();
+</script>
+</body>
+</html>

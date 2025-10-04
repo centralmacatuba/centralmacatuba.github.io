@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sobre o Jornal Macatuba">
+  <title>Sobre - Jornal Macatuba</title>
+  <link rel="stylesheet" href="https://macatuba.eliasempresas.com/assets/styles/footer.css">
+  <link rel="stylesheet" href="https://macatuba.eliasempresas.com/assets/jornal/styles/style.css">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">
+      <h1><a href="index.html">Jornal Macatuba</a></h1>
+    </div>
+
+    <!-- Bloco de Pesquisa Jornal Macatuba -->
+    <section class="pesquisa">
+      <form action="pesquisa.php" method="get" class="pesquisa-form">
+        <input type="text" name="q" placeholder="Pesquisar notícias..." required>
+        <select name="campo">
+          <option value="tudo">Tudo</option>
+          <option value="titulo">Título</option>
+          <option value="subtitulo">Subtítulo</option>
+          <option value="conteudo">Texto</option>
+        </select>
+        <button type="submit">Pesquisar</button>
+      </form>
+    </section>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="noticias.php">Notícias</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sobre">
+      <h2>Sobre o Jornal Macatuba</h2>
+      <p>
+        O <strong>Jornal Macatuba</strong> é um serviço gratuito oferecido pela 
+        <strong>Central Macatuba</strong>, criado em 2025 para dar voz à comunidade 
+        e levar informação de qualidade para todos os moradores de Macatuba.  
+      </p>
+      <p>
+        Nosso lema é claro: <em>"A notícia de Macatuba, do povo para o povo"</em>.  
+        Buscamos garantir que cada cidadão tenha acesso às notícias locais e regionais, 
+        com total transparência, responsabilidade e compromisso com a verdade.  
+      </p>
+
+      <h3>Compromisso</h3>
+      <p>
+        O Jornal Macatuba é totalmente independente, gratuito e feito para a população, 
+        sem barreiras de acesso à informação. Acreditamos que uma comunidade bem informada 
+        é uma comunidade mais forte.
+      </p>
+
+      <h3>Equipe</h3>
+      <p>
+        O Jornal Macatuba é mantido pela <strong>Elias Empresas</strong>, responsável pela 
+        hospedagem e infraestrutura.  
+        Entretanto, o conteúdo ganha vida através da colaboração dos próprios cidadãos, 
+        que ajudam a noticiar os acontecimentos e fortalecer a comunicação comunitária.  
+      </p>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+<?php echo file_get_contents('https://macatuba.eliasempresas.com/assets/footer.php'); ?>
+</footer>
+
+</body>
+</html>
