@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="150" viewBox="0 0 500 150">
+  <!-- Círculo central -->
+  <circle cx="60" cy="75" r="50" fill="#f50000"/>
+  <!-- Sigla CM em branco dentro do círculo -->
+  <text x="60" y="85" text-anchor="middle" font-size="48" font-family="Arial, sans-serif" fill="#fff" font-weight="bold">CM</text>
+  <!-- Nome completo ao lado -->
+  <text x="130" y="70" font-size="40" font-family="Arial, sans-serif" fill="#f50000" font-weight="bold">
+    Central Macatuba
+  </text>
+  <!-- Slogan abaixo do nome -->
+  <text x="130" y="110" font-size="20" font-family="Arial, sans-serif" fill="#555">
+    Serviços gratuitos para todos em Macatuba
+  </text>
+</svg>
