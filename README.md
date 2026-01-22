@@ -1,4 +1,4 @@
-# Central Macatuba - GitHub Pages
+# Central Macatuba - API Pública
 
 Este repositório contém o site oficial e a documentação técnica da Central Macatuba.
 
