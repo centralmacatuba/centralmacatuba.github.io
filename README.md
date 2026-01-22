@@ -14,14 +14,10 @@ Abaixo estão os links para os exemplos interativos de cada serviço disponível
 
 | Serviço | Exemplo HTML | Documentação (MD) |
 | :--- | :--- | :--- |
-| Autorização | [Acessar](autorizacao/index.html) | [README](autorizacao/README.md) |
 | Avisos | [Acessar](avisos/index.html) | [README](avisos/README.md) |
 | Calendário | [Acessar](calendario/index.html) | [README](calendario/README.md) |
-| Cloudflare | [Acessar](cloudflare/index.html) | [README](cloudflare/README.md) |
 | Comunicação | [Acessar](comunicacao/index.html) | [README](comunicacao/README.md) |
 | Domínios | [Acessar](dominios/index.html) | [README](dominios/README.md) |
-| IA | [Acessar](ia/index.html) | [README](ia/README.md) |
-| ID | [Acessar](id/index.html) | [README](id/README.md) |
 | Informações | [Acessar](informacoes/index.html) | [README](informacoes/README.md) |
 | Jornal | [Acessar](jornal/index.html) | [README](jornal/README.md) |
 | Links | [Acessar](links/index.html) | [README](links/README.md) |
@@ -33,6 +29,4 @@ Abaixo estão os links para os exemplos interativos de cada serviço disponível
 | Serviços | [Acessar](servicos/index.html) | [README](servicos/README.md) |
 | SOS | [Acessar](sos/index.html) | [README](sos/README.md) |
 | Status | [Acessar](status/index.html) | [README](status/README.md) |
-| Tags | [Acessar](tags/index.html) | [README](tags/README.md) |
 | Tempo | [Acessar](tempo/index.html) | [README](tempo/README.md) |
-| Webhook | [Acessar](webhook/index.html) | [README](webhook/README.md) |
