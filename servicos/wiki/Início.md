@@ -1,0 +1,1 @@
+Bem-vindo(a) ao wiki centralmacatuba.github.io!
