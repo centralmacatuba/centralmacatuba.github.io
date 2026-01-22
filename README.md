@@ -4,9 +4,7 @@ Este repositório contém o site oficial e a documentação técnica da Central 
 
 ## Documentação da API Pública
 
-Para acessar a documentação completa da API Pública, incluindo endpoints, parâmetros e exemplos de uso, consulte o arquivo:
-
-[API_Publica_Central_Macatuba.md](API_Publica_Central_Macatuba.md)
+Para acessar a documentação completa da API Pública, incluindo endpoints, parâmetros e exemplos de uso.
 
 ## Serviços e Exemplos Interativos
 
