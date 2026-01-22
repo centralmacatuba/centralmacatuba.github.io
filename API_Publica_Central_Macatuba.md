@@ -6,7 +6,7 @@ A **API Pública da Central Macatuba** oferece acesso programático a dados aber
 
 Todos os endpoints da API devem ser acessados utilizando o seguinte prefixo:
 
-`https://publica.api.centralmacatuba.eu.org`
+`https://publica.api.centralmacatuba.eu.org/api`
 
 ---
 
@@ -30,7 +30,7 @@ Este endpoint permite a pesquisa de notícias e artigos publicados no Jornal da 
 Pesquisar notícias com a palavra "inauguração" no título:
 
 ```bash
-curl -X GET "https://publica.api.centralmacatuba.eu.org/jornal/pesquisar.php?q=inauguração&filtro=titulo"
+curl -X GET "https://publica.api.centralmacatuba.eu.org/api/jornal/pesquisar.php?q=inauguração&filtro=titulo"
 ```
 
 ### Exemplo de Resposta (JSON)
@@ -64,7 +64,7 @@ Este endpoint fornece dados meteorológicos históricos e em tempo real para Mac
 
 ### Endpoint
 
-`/tempo/verificar.php`
+`/api/tempo/verificar.php`
 
 ### Parâmetros
 
@@ -79,7 +79,7 @@ Este endpoint fornece dados meteorológicos históricos e em tempo real para Mac
 Obter dados de tempo entre 1º e 20 de Janeiro de 2026:
 
 ```bash
-curl -X GET "https://publica.api.centralmacatuba.eu.org/tempo/verificar.php?start=2026-01-01&end=2026-01-20"
+curl -X GET "https://publica.api.centralmacatuba.eu.org/api/tempo/verificar.php?start=2026-01-01&end=2026-01-20"
 ```
 
 ### Exemplo de Resposta (JSON)
@@ -116,7 +116,7 @@ Este endpoint permite a pesquisa de pontos de interesse (POIs) cadastrados no Ma
 
 ### Endpoint
 
-`/mapa/pesquisar.php`
+`/api/mapa/pesquisar.php`
 
 ### Parâmetros
 
@@ -130,7 +130,7 @@ Este endpoint permite a pesquisa de pontos de interesse (POIs) cadastrados no Ma
 Pesquisar pontos de interesse do tipo "escola":
 
 ```bash
-curl -X GET "https://publica.api.centralmacatuba.eu.org/mapa/pesquisar.php?q=escola&filtro=tipo"
+curl -X GET "https://publica.api.centralmacatuba.eu.org/api/mapa/pesquisar.php?q=escola&filtro=tipo"
 ```
 
 ### Exemplo de Resposta (JSON)
@@ -162,7 +162,7 @@ Este endpoint lista os alertas de emergência ativos e recentes emitidos pela Ce
 
 ### Endpoint
 
-`/sos/listar_alertas.php`
+`/api/sos/listar_alertas.php`
 
 ### Parâmetros
 
@@ -173,7 +173,7 @@ Não requer parâmetros de entrada.
 Listar todos os alertas ativos:
 
 ```bash
-curl -X GET "https://publica.api.centralmacatuba.eu.org/sos/listar_alertas.php"
+curl -X GET "https://publica.api.centralmacatuba.eu.org/api/sos/listar_alertas.php"
 ```
 
 ### Exemplo de Resposta (JSON)
@@ -203,7 +203,7 @@ Este endpoint permite verificar a saúde e o status operacional dos serviços e 
 
 ### Endpoint
 
-`/status/verificar.php`
+`/api/status/verificar.php`
 
 ### Parâmetros
 
@@ -217,7 +217,7 @@ Este endpoint permite verificar a saúde e o status operacional dos serviços e 
 Obter o status completo de todos os serviços:
 
 ```bash
-curl -X GET "https://publica.api.centralmacatuba.eu.org/status/verificar.php?tipo=tudo"
+curl -X GET "https://publica.api.centralmacatuba.eu.org/api/status/verificar.php?tipo=tudo"
 ```
 
 ### Exemplo de Resposta (JSON - Estrutura Simplificada)
