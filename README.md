@@ -1,2 +1,1 @@
-# centralmacatuba.github.io
-Site da Central Macatuba
+# Central Macatuba - GitHub Pages\n\nEste repositório contém o site oficial e a documentação técnica da Central Macatuba.\n\n## Documentação da API Pública\n\nPara acessar a documentação completa da API Pública, incluindo endpoints, parâmetros e exemplos de uso, consulte o arquivo:\n\n[API_Publica_Central_Macatuba.md](API_Publica_Central_Macatuba.md)\n
