@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo API Status - Central Macatuba</title>
+    <title>Exemplo API Paginas - Central Macatuba</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 </head>
 <body>
-    <h1>Exemplo API Status</h1>
-    <p>Exemplo de integração com o serviço Status.</p>
+    <h1>Exemplo API Paginas</h1>
+    <p>Exemplo de integração com o serviço Paginas.</p>
     
     <button onclick="testar()">Testar API</button>
 
@@ -17,7 +17,7 @@
     <script>
         async function testar() {
             try {
-                const res = await fetch('https://publica.api.centralmacatuba.eu.org/status/verificar.php');
+                const res = await fetch('https://publica.api.centralmacatuba.eu.org/paginas/verificar.php');
                 const data = await res.json();
                 document.getElementById('resultado').textContent = JSON.stringify(data, null, 2);
             } catch (e) {

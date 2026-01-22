@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo API Informações - Central Macatuba</title>
+    <title>Exemplo API Informacoes - Central Macatuba</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 </head>
 <body>
-    <h1>Exemplo API Informações</h1>
-    <p>Pesquise informações gerais sobre o município.</p>
+    <h1>Exemplo API Informacoes</h1>
+    <p>Exemplo de integração com o serviço Informacoes.</p>
     
-    <input type="text" id="query" placeholder="Digite sua pesquisa...">
-    <button onclick="pesquisar()">Pesquisar</button>
+    <button onclick="testar()">Testar API</button>
 
     <pre id="resultado">Os resultados aparecerão aqui...</pre>
 
     <script>
-        async function pesquisar() {
-            const q = document.getElementById('query').value;
-            const res = await fetch(`https://publica.api.centralmacatuba.eu.org/informacoes/pesquisar.php?q=${encodeURIComponent(q)}`);
-            const data = await res.json();
-            document.getElementById('resultado').textContent = JSON.stringify(data, null, 2);
+        async function testar() {
+            try {
+                const res = await fetch('https://publica.api.centralmacatuba.eu.org/informacoes/verificar.php');
+                const data = await res.json();
+                document.getElementById('resultado').textContent = JSON.stringify(data, null, 2);
+            } catch (e) {
+                document.getElementById('resultado').textContent = 'Erro ao conectar com a API pública.';
+            }
         }
     </script>
     <p><a href="../">Voltar para a Home</a></p>

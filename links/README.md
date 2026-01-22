@@ -1,1 +1,11 @@
-# API Links\n\nDocumentação técnica e exemplos para o serviço de links úteis.
+# API Links
+
+Documentação técnica e exemplos para o serviço de Links.
+
+## Endpoints Principais
+
+- `GET /Links/verificar.php` - Verifica o status ou dados do serviço.
+
+## Exemplo de Uso
+
+Consulte o arquivo [index.html](index.html) nesta pasta para um exemplo interativo.

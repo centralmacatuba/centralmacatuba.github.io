@@ -8,19 +8,21 @@
 </head>
 <body>
     <h1>Exemplo API Jornal</h1>
-    <p>Pesquise notícias na Central Macatuba.</p>
+    <p>Exemplo de integração com o serviço Jornal.</p>
     
-    <input type="text" id="query" placeholder="Digite sua pesquisa...">
-    <button onclick="pesquisar()">Pesquisar</button>
+    <button onclick="testar()">Testar API</button>
 
     <pre id="resultado">Os resultados aparecerão aqui...</pre>
 
     <script>
-        async function pesquisar() {
-            const q = document.getElementById('query').value;
-            const res = await fetch(`https://publica.api.centralmacatuba.eu.org/jornal/pesquisar.php?q=${encodeURIComponent(q)}`);
-            const data = await res.json();
-            document.getElementById('resultado').textContent = JSON.stringify(data, null, 2);
+        async function testar() {
+            try {
+                const res = await fetch('https://publica.api.centralmacatuba.eu.org/jornal/verificar.php');
+                const data = await res.json();
+                document.getElementById('resultado').textContent = JSON.stringify(data, null, 2);
+            } catch (e) {
+                document.getElementById('resultado').textContent = 'Erro ao conectar com a API pública.';
+            }
         }
     </script>
     <p><a href="../">Voltar para a Home</a></p>
