@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo API Informações - Central Macatuba</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+    <h1>Exemplo API Informações</h1>
+    <p>Pesquise informações gerais sobre o município.</p>
+    
+    <input type="text" id="query" placeholder="Digite sua pesquisa...">
+    <button onclick="pesquisar()">Pesquisar</button>
+
+    <pre id="resultado">Os resultados aparecerão aqui...</pre>
+
+    <script>
+        async function pesquisar() {
+            const q = document.getElementById('query').value;
+            const res = await fetch(`https://publica.api.centralmacatuba.eu.org/informacoes/pesquisar.php?q=${encodeURIComponent(q)}`);
+            const data = await res.json();
+            document.getElementById('resultado').textContent = JSON.stringify(data, null, 2);
+        }
+    </script>
+    <p><a href="../">Voltar para a Home</a></p>
+</body>
+</html>
