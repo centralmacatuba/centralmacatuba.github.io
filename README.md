@@ -1,43 +1,38 @@
-# Central Macatuba - API Pública
+# Central Macatuba — Site institucional
 
-Este repositório contém o site oficial e a documentação técnica da Central Macatuba.
+Site institucional estático para apresentar a Central Macatuba como um ecossistema digital independente desenvolvido por Desenvolvedor EE (Dev EE).
 
-## Documentação da API Pública
+## Objetivo
 
-Para acessar a documentação completa da API Pública, incluindo endpoints, parâmetros e exemplos de uso.
+- Apresentar o projeto e deixar clara sua independência institucional.
+- Organizar os serviços, aplicações e componentes técnicos por categoria.
+- Direcionar visitantes à plataforma principal, à documentação da API pública e aos repositórios.
+- Explicar, com transparência, o uso de serviços gratuitos de terceiros e a existência de componentes planejados ou em desenvolvimento.
 
-## Serviços e Exemplos Interativos
+## Tecnologias
 
-Abaixo estão os links para os exemplos interativos de cada serviço disponível na API:
+- HTML semântico
+- CSS responsivo, sem framework
+- JavaScript nativo para menu móvel e filtros do catálogo
+- Ícone SVG local
 
-| Serviço | Exemplo HTML | Documentação (MD) |
-| :--- | :--- | :--- |
-| Avisos | [Acessar](avisos/index.html) | [README](avisos/README.md) |
-| Calendário | [Acessar](calendario/index.html) | [README](calendario/README.md) |
-| Comunicação | [Acessar](comunicacao/index.html) | [README](comunicacao/README.md) |
-| Domínios | [Acessar](dominios/index.html) | [README](dominios/README.md) |
-| Informações | [Acessar](informacoes/index.html) | [README](informacoes/README.md) |
-| Jornal | [Acessar](jornal/index.html) | [README](jornal/README.md) |
-| Links | [Acessar](links/index.html) | [README](links/README.md) |
-| Mapa | [Acessar](mapa/index.html) | [README](mapa/README.md) |
-| Newsletter | [Acessar](newsletter/index.html) | [README](newsletter/README.md) |
-| Novidades | [Acessar](novidades/index.html) | [README](novidades/README.md) |
-| Páginas | [Acessar](paginas/index.html) | [README](paginas/README.md) |
-| Redicionador | [Acessar](redicionador/index.html) | [README](redicionador/README.md) |
-| SOS | [Acessar](sos/index.html) | [README](sos/README.md) |
-| Status | [Acessar](status/index.html) | [README](status/README.md) |
-| Tempo | [Acessar](tempo/index.html) | [README](tempo/README.md) |
+Não há processo de build, dependências npm ou bibliotecas externas obrigatórias.
 
-### Subserviços (Pasta Servicos)
+## Estrutura
 
-| Serviço | Exemplo HTML | Documentação (MD) |
-| :--- | :--- | :--- |
-| Cursos | [Acessar](servicos/cursos/index.html) | [README](servicos/cursos/README.md) |
-| Docs | [Acessar](servicos/docs/index.html) | [README](servicos/docs/README.md) |
-| Jogos | [Acessar](servicos/jogos/index.html) | [README](servicos/jogos/README.md) |
-| Streaming | [Acessar](servicos/streaming/index.html) | [README](servicos/streaming/README.md) |
-| Wiki | [Acessar](servicos/wiki/index.html) | [README](servicos/wiki/README.md) |
+- `index.html` — conteúdo e estrutura da página
+- `assets/css/styles.css` — identidade visual e layout responsivo
+- `assets/js/main.js` — navegação móvel, busca e filtros
+- `assets/favicon.svg` — favicon vetorial
 
-## Wiki do Projeto
+## Publicação
 
-A documentação completa também está disponível na [Wiki do GitHub](https://github.com/centralmacatuba/centralmacatuba.github.io/wiki).
+O repositório `centralmacatuba/centralmacatuba.github.io` utiliza o GitHub Pages. A branch `feat/institutional-website` destina-se à implementação e revisão. A publicação da versão institucional deve ocorrer somente após revisão e integração na branch principal configurada pelo repositório.
+
+## Manutenção do catálogo
+
+Antes de publicar, confira os destinos dos links, especialmente os subdomínios que podem variar entre `qzz.io` e `dpdns.org`. Atualize os rótulos de estado quando componentes mudarem de planejados para disponíveis ou vice-versa. Não apresente uma funcionalidade como operacional sem confirmação.
+
+## Declaração institucional
+
+A Central Macatuba é um projeto independente desenvolvido por Desenvolvedor EE (Dev EE), sem vínculo institucional com a Prefeitura Municipal de Macatuba. O ecossistema utiliza serviços de terceiros, incluindo opções gratuitas cujas condições e disponibilidade podem mudar.
