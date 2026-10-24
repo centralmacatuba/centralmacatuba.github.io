@@ -1,279 +1,238 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Central Macatuba - API Pública</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-    
-<style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #000000;
-            background-color: #FFFFFF;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 3px solid #FF0000;
-            padding-bottom: 20px;
-        }
-        h1 {
-            color: #FF0000;
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #FF0000;
-            border-left: 4px solid #FF0000;
-            padding-left: 15px;
-            margin-top: 30px;
-        }
-        h3, h4, h5, h6 {
-            color: #FF0000;
-        }
-        .subtitle {
-            font-size: 1.1em;
-            color: #000000;
-        }
-        .section {
-            margin-bottom: 40px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #FFFFFF;
-        }
-        th, td {
-            border: 1px solid #000000;
-            padding: 12px;
-            text-align: left;
-            color: #000000;
-            background-color: #FFFFFF;
-        }
-        th {
-            background-color: #FF0000;
-            font-weight: bold;
-            color: #FFFFFF;
-        }
-        tr:nth-child(even) {
-            background-color: #F5F5F5;
-        }
-        a {
-            color: #FF0000;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-            color: #CC0000;
-        }
-        button {
-            background-color: #FF0000;
-            color: #FFFFFF;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1em;
-        }
-        button:hover {
-            background-color: #CC0000;
-        }
-        pre {
-            background-color: #F5F5F5;
-            border: 1px solid #FF0000;
-            border-left: 4px solid #FF0000;
-            padding: 15px;
-            overflow-x: auto;
-            color: #000000;
-        }
-        code {
-            background-color: #F5F5F5;
-            color: #000000;
-            padding: 2px 6px;
-            border-radius: 3px;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #FF0000;
-            color: #000000;
-            font-size: 0.9em;
-        }
-        input, textarea, select {
-            background-color: #FFFFFF;
-            color: #000000;
-            border: 1px solid #FF0000;
-            padding: 8px;
-            border-radius: 3px;
-        }
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: #CC0000;
-            box-shadow: 0 0 5px #FF0000;
-        }
-</style>
-    </head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#ff0000">
+  <meta name="description" content="Conheça a Central Macatuba: um projeto digital independente e gratuito, desenvolvido por Desenvolvedor EE, que reúne serviços, informações e ferramentas em um ecossistema integrado.">
+  <meta name="author" content="Desenvolvedor EE (Dev EE)">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://centralmacatuba.github.io/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
+  <title>Central Macatuba — Ecossistema digital independente</title>
+</head>
 <body>
-    <header>
-        <h1>Central Macatuba</h1>
-        <p class="subtitle">Infraestrutura Digital e Hub Operacional do Município</p>
-    </header>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Central Macatuba — início">
+        <span class="brand-mark" aria-hidden="true">CM</span>
+        <span class="brand-name">Central <strong>Macatuba</strong></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span class="menu-toggle-lines" aria-hidden="true"></span>
+        <span class="sr-only">Abrir menu</span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#infraestrutura">Infraestrutura</a>
+        <a href="#desenvolvedores">Desenvolvedores</a>
+        <a class="nav-cta" href="https://centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Acessar Central ↗</a>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <section class="section">
-            <h2>Bem-vindo à API Pública</h2>
-            <p>Este repositório contém o site oficial e a documentação técnica da Central Macatuba. A API Pública oferece acesso programático a dados abertos e informações em tempo real sobre o município, seguindo uma arquitetura modular e orientada a serviços.</p>
-            <p><strong>URL Base da API:</strong> <code>https://publica.api.centralmacatuba.qzz.io/api</code></p>
-        </section>
+  <main id="conteudo">
+    <section id="inicio" class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Um projeto independente de Dev EE</p>
+        <h1>Macatuba conectada.<br><span>Um ecossistema digital.</span></h1>
+        <p class="hero-lead">Serviços, informações e ferramentas reunidos em uma experiência digital integrada — criada de forma independente e construída com recursos gratuitos disponíveis na Internet.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Explorar a Central <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="#servicos">Conhecer os serviços <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-note"><span aria-hidden="true">ⓘ</span> Projeto independente. Não é um portal oficial da Prefeitura Municipal de Macatuba.</div>
+      </div>
+      <div class="hero-stamp" aria-hidden="true"><span>CM</span><small>ECOSSISTEMA<br>DIGITAL</small></div>
+    </section>
 
-        <section class="section">
-            <h2>Serviços Principais</h2>
-            <p>Abaixo estão os links para os exemplos interativos de cada serviço disponível na API:</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Serviço</th>
-                        <th>Exemplo HTML</th>
-                        <th>Documentação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Avisos</td>
-                        <td><a href="avisos/index.html">Acessar</a></td>
-                        <td><a href="avisos/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Calendário</td>
-                        <td><a href="calendario/index.html">Acessar</a></td>
-                        <td><a href="calendario/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Comunicação</td>
-                        <td><a href="comunicacao/index.html">Acessar</a></td>
-                        <td><a href="comunicacao/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Domínios</td>
-                        <td><a href="dominios/index.html">Acessar</a></td>
-                        <td><a href="dominios/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Informações</td>
-                        <td><a href="informacoes/index.html">Acessar</a></td>
-                        <td><a href="informacoes/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Jornal</td>
-                        <td><a href="jornal/index.html">Acessar</a></td>
-                        <td><a href="jornal/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Links</td>
-                        <td><a href="links/index.html">Acessar</a></td>
-                        <td><a href="links/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Mapa</td>
-                        <td><a href="mapa/index.html">Acessar</a></td>
-                        <td><a href="mapa/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Newsletter</td>
-                        <td><a href="newsletter/index.html">Acessar</a></td>
-                        <td><a href="newsletter/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Novidades</td>
-                        <td><a href="novidades/index.html">Acessar</a></td>
-                        <td><a href="novidades/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Páginas</td>
-                        <td><a href="paginas/index.html">Acessar</a></td>
-                        <td><a href="paginas/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Redicionador</td>
-                        <td><a href="redicionador/index.html">Acessar</a></td>
-                        <td><a href="redicionador/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>SOS</td>
-                        <td><a href="sos/index.html">Acessar</a></td>
-                        <td><a href="sos/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Status</td>
-                        <td><a href="status/index.html">Acessar</a></td>
-                        <td><a href="status/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Tempo</td>
-                        <td><a href="tempo/index.html">Acessar</a></td>
-                        <td><a href="tempo/README.md">README</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+    <section id="sobre" class="section section-intro">
+      <div class="container intro-grid">
+        <div>
+          <p class="section-kicker">01 / Sobre o projeto</p>
+          <h2>Uma porta de entrada para<br><span>serviços digitais.</span></h2>
+        </div>
+        <div class="intro-copy">
+          <p class="large-copy">A Central Macatuba é um projeto digital independente desenvolvido por <strong>Desenvolvedor EE (Dev EE)</strong> para organizar e conectar aplicações, informações e ferramentas em um ecossistema comum.</p>
+          <p>O projeto integra serviços voltados ao público, infraestrutura técnica e experiências experimentais. Seus componentes utilizam plataformas e provedores de terceiros, priorizando opções gratuitas disponíveis na Internet.</p>
+          <div class="independence-box">
+            <span class="independence-icon" aria-hidden="true">!</span>
+            <p><strong>Independência institucional</strong><br>A Central Macatuba não possui vínculo institucional com a Prefeitura Municipal de Macatuba. Não é um serviço oficial do governo municipal.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section class="section">
-            <h2>Subserviços (Pasta Serviços)</h2>
-            <p>Serviços especializados disponíveis dentro da pasta de serviços:</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Serviço</th>
-                        <th>Exemplo HTML</th>
-                        <th>Documentação</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Cursos</td>
-                        <td><a href="servicos/cursos/index.html">Acessar</a></td>
-                        <td><a href="servicos/cursos/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Docs</td>
-                        <td><a href="servicos/docs/index.html">Acessar</a></td>
-                        <td><a href="servicos/docs/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Jogos</td>
-                        <td><a href="servicos/jogos/index.html">Acessar</a></td>
-                        <td><a href="servicos/jogos/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Streaming</td>
-                        <td><a href="servicos/streaming/index.html">Acessar</a></td>
-                        <td><a href="servicos/streaming/README.md">README</a></td>
-                    </tr>
-                    <tr>
-                        <td>Wiki</td>
-                        <td><a href="servicos/wiki/index.html">Acessar</a></td>
-                        <td><a href="servicos/wiki/README.md">README</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+    <section id="servicos" class="section services-section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">02 / Explore o ecossistema</p>
+            <h2>Serviços e <span>aplicações</span></h2>
+          </div>
+          <p class="section-description">Encontre os serviços da Central Macatuba por categoria. A disponibilidade pode variar conforme o provedor e a fase de desenvolvimento de cada componente.</p>
+        </div>
 
-        <section class="section">
-            <h2>Documentação Adicional</h2>
-            <p>Para mais informações, consulte a <a href="https://github.com/centralmacatuba/centralmacatuba.github.io/wiki">Wiki do GitHub</a> com documentação detalhada de cada serviço.</p>
-        </section>
-    </main>
+        <div class="filter-row">
+          <label class="search-box"><span aria-hidden="true">⌕</span><span class="sr-only">Pesquisar serviços</span><input id="service-search" type="search" placeholder="Pesquisar serviços..." autocomplete="off"></label>
+          <div class="filter-buttons" role="group" aria-label="Filtrar serviços">
+            <button class="filter-button is-active" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+            <button class="filter-button" type="button" data-filter="publico" aria-pressed="false">Público</button>
+            <button class="filter-button" type="button" data-filter="tecnologia" aria-pressed="false">Tecnologia</button>
+            <button class="filter-button" type="button" data-filter="jogos" aria-pressed="false">Jogos</button>
+          </div>
+        </div>
+        <p id="filter-status" class="filter-status" aria-live="polite">Exibindo todos os serviços.</p>
 
-    <footer class="footer">
-        <p>&copy; 2026 Central Macatuba. Todos os direitos reservados.</p>
-    </footer>
+        <div class="service-grid" id="service-grid">
+          <article class="service-card" data-category="publico" data-search="jornal noticias publicacoes">
+            <div class="card-top"><span class="service-icon">01</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Jornal Macatuba</h3><p>Área dedicada a notícias, publicações e informações de interesse local.</p><a href="https://jornal.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer" aria-label="Acessar Jornal Macatuba">Acessar serviço <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card" data-category="publico" data-search="mapa geografia localizacao">
+            <div class="card-top"><span class="service-icon">02</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Mapa Macatuba</h3><p>Recursos cartográficos e ferramentas de localização.</p><a href="https://mapa.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer" aria-label="Acessar Mapa Macatuba">Acessar serviço <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card" data-category="publico" data-search="tempo meteorologia clima previsao">
+            <div class="card-top"><span class="service-icon">03</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Tempo Macatuba</h3><p>Consulta de informações meteorológicas e condições do tempo.</p><a href="https://tempo.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer" aria-label="Acessar Tempo Macatuba">Acessar serviço <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card" data-category="publico" data-search="informacoes conteudo orientacao">
+            <div class="card-top"><span class="service-icon">04</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Informações Macatuba</h3><p>Conteúdos informativos e referências úteis sobre Macatuba.</p><a href="https://informacoes.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer" aria-label="Acessar Informações Macatuba">Acessar serviço <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card" data-category="publico" data-search="sos alertas seguranca emergencia">
+            <div class="card-top"><span class="service-icon">05</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>SOS Macatuba</h3><p>Recursos relacionados a alertas e funcionalidades de apoio e segurança.</p><a href="https://sos.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer" aria-label="Acessar SOS Macatuba">Acessar serviço <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card" data-category="publico" data-search="servicos portal ferramentas">
+            <div class="card-top"><span class="service-icon">06</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Serviços Macatuba</h3><p>Portal que organiza ferramentas e aplicações complementares.</p><a href="https://servicos.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer" aria-label="Acessar Serviços Macatuba">Acessar serviço <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="service-card" data-category="publico" data-search="cursos educacao aprendizagem">
+            <div class="card-top"><span class="service-icon">07</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Cursos - Serviços Macatuba</h3><p>Área de cursos e recursos de aprendizagem dos Serviços Macatuba.</p><a href="https://cursos.servicos.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer" aria-label="Acessar Cursos dos Serviços Macatuba">Acessar serviço <span aria-hidden="true">→</span></a></article>
+          <article class="service-card" data-category="publico" data-search="docs documentação guias referencias">
+            <div class="card-top"><span class="service-icon">08</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Docs - Serviços Macatuba</h3><p>Documentação, guias e referências dos Serviços Macatuba.</p><a href="https://docs.servicos.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer" aria-label="Acessar Docs dos Serviços Macatuba">Acessar serviço <span aria-hidden="true">→</span></a></article>
+          <article class="service-card" data-category="publico" data-search="jogos entretenimento">
+            <div class="card-top"><span class="service-icon">09</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Jogos - Serviços Macatuba</h3><p>Área de jogos e experiências interativas.</p><a href="https://jogos.servicos.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer" aria-label="Acessar Jogos dos Serviços Macatuba">Acessar serviço <span aria-hidden="true">→</span></a></article>
+          <article class="service-card" data-category="publico" data-search="streaming midia video audio">
+            <div class="card-top"><span class="service-icon">10</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Streaming - Serviços Macatuba</h3><p>Recursos e experiências de mídia disponibilizados pelo projeto.</p><a href="https://streaming.servicos.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer" aria-label="Acessar Streaming dos Serviços Macatuba">Acessar serviço <span aria-hidden="true">→</span></a></article>
+          <article class="service-card" data-category="publico" data-search="wiki conhecimento enciclopedia miraheze">
+            <div class="card-top"><span class="service-icon">11</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Wiki - Serviços Macatuba</h3><p>Base de conhecimento hospedada pela Miraheze, serviço externo.</p><a href="https://wiki.servicos.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer" aria-label="Acessar Wiki Macatuba">Acessar serviço <span aria-hidden="true">→</span></a><a class="secondary-link" href="https://centralmacatuba.miraheze.org/" target="_blank" rel="noopener noreferrer">Endereço alternativo ↗</a></article>
+          <article class="service-card" data-category="publico" data-search="forum comunidade discourse conversas">
+            <div class="card-top"><span class="service-icon">12</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Central Macatuba — Fórum</h3><p>Espaço de comunidade hospedado pela plataforma Discourse.</p><a href="https://centralmacatuba.discourse.group/" target="_blank" rel="noopener noreferrer" aria-label="Acessar Fórum Central Macatuba">Participar do fórum <span aria-hidden="true">→</span></a></article>
+
+          <article class="service-card service-card-tech" data-category="tecnologia" data-search="mcp integração ferramentas protocolo">
+            <div class="card-top"><span class="service-icon">13</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Central Macatuba — MCP</h3><p>Componente de integração para clientes e ferramentas compatíveis com MCP.</p><a href="https://mcp.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Conhecer o MCP <span aria-hidden="true">→</span></a></article>
+          <article class="service-card service-card-tech" data-category="tecnologia" data-search="cdn distribuicao conteudo arquivos">
+            <div class="card-top"><span class="service-icon">14</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Central Macatuba — CDN</h3><p>Infraestrutura para distribuição de arquivos e recursos digitais.</p><a href="https://cdn.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Conhecer a CDN <span aria-hidden="true">→</span></a></article>
+          <article class="service-card service-card-tech" data-category="tecnologia" data-search="teste homologacao ambiente experimental">
+            <div class="card-top"><span class="service-icon">15</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Central Macatuba — Teste</h3><p>Ambiente destinado a experimentos e validações.</p><a href="https://teste.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Acessar ambiente <span aria-hidden="true">→</span></a></article>
+          <article class="service-card service-card-tech" data-category="tecnologia" data-search="redirecionador links freehostia">
+            <div class="card-top"><span class="service-icon">16</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Central Macatuba - Redirecionador</h3><p>Componente de redirecionamento hospedado na FreeHostia, conforme os caminhos configurados.</p><a href="https://cm.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Acessar domínio principal <span aria-hidden="true">→</span></a></article>
+          <article class="service-card service-card-tech" data-category="tecnologia" data-search="host hospedagem myownfreehost">
+            <div class="card-top"><span class="service-icon">17</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Central Macatuba — HOST</h3><p>Serviço de hospedagem gratuito baseado na estrutura de revenda da MyOwnFreeHost.</p><a href="https://host.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Acessar hospedagem <span aria-hidden="true">→</span></a><a class="secondary-link" href="https://dash.host.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Painel de gerenciamento ↗</a><a class="secondary-link" href="https://api.host.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">API da hospedagem ↗</a></article>
+          <article class="service-card service-card-tech" data-category="tecnologia" data-search="api publica openapi swagger desenvolvedores">
+            <div class="card-top"><span class="service-icon">18</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Central Macatuba - API Pública</h3><p>Interface para integrações e automações. Consulte a documentação Swagger UI para conhecer os endpoints destinados ao acesso público e os formatos das requisições.</p><a href="https://publica.api.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Acessar endpoint público <span aria-hidden="true">→</span></a><a class="secondary-link" href="https://github.com/centralmacatuba/api-publica-docs" target="_blank" rel="noopener noreferrer">Consultar documentação Swagger UI ↗</a></article>
+          <article class="service-card service-card-tech" data-category="tecnologia" data-search="api privada autorizacao acesso restrito">
+            <div class="card-top"><span class="service-icon">20</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Central Macatuba - WebSub HUB</h3><p>Hub de distribuição de notificações para publicadores e assinantes compatíveis.</p><a href="https://websub.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Conhecer o WebSub HUB <span aria-hidden="true">→</span></a></article>
+          <article class="service-card service-card-tech" data-category="tecnologia" data-search="cdn r2 armazenamento arquivos">
+            <div class="card-top"><span class="service-icon">21</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Central Macatuba - CDN (R2)</h3><p>Endereço dedicado à distribuição de recursos armazenados no Cloudflare R2.</p><a href="https://cdn.r2.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Acessar endpoint <span aria-hidden="true">→</span></a></article>
+          <article class="service-card service-card-tech" data-category="tecnologia" data-search="status monitoramento disponibilidade">
+            <div class="card-top"><span class="service-icon">22</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Central Macatuba - Status</h3><p>Página de monitoramento dos componentes acompanhados pelo projeto.</p><a href="https://status.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Consultar status <span aria-hidden="true">→</span></a></article>
+          <article class="service-card service-card-tech" data-category="tecnologia" data-search="status host hospedagem monitoramento">
+            <div class="card-top"><span class="service-icon">23</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Central Macatuba - HOST Status</h3><p>Monitoramento específico da infraestrutura de hospedagem.</p><a href="https://status.host.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Consultar status do HOST <span aria-hidden="true">→</span></a></article>
+
+          <article class="service-card service-card-game" data-category="jogos" data-search="minecraft java bedrock servidor em planejamento em breve">
+            <div class="card-top"><span class="service-icon">24</span><span class="status-badge status-planned">Em planejamento / em breve</span></div><h3>Central Macatuba — Minecraft</h3><p>Servidor Minecraft planejado, com hospedagem prevista na Oracle Cloud Free. O objetivo é oferecer compatibilidade com clientes Java, Bedrock, EaglerCraft, Mcraft e versões antigas e novas, conforme a compatibilidade de cada cliente. Ainda não está anunciado como disponível.</p><span class="endpoint">minecraft.centralmacatuba.qzz.io:25565</span></article>
+          <article class="service-card service-card-game" data-category="jogos" data-search="mcraft cliente minecraft em planejamento em breve"><div class="card-top"><span class="service-icon">25</span><span class="status-badge status-planned">Em planejamento / em breve</span></div><h3>Central Macatuba — Mcraft</h3><p>Componente de acesso ao ecossistema Mcraft, com hospedagem prevista na Oracle Cloud Free. Está em planejamento e previsto para chegar em breve.</p><span class="endpoint">wss://mcraft.centralmacatuba.qzz.io:443</span></article>
+          <article class="service-card service-card-game" data-category="jogos" data-search="eaglercraft navegador em planejamento em breve">
+            <div class="card-top"><span class="service-icon">26</span><span class="status-badge status-planned">Em planejamento / em breve</span></div><h3>Central Macatuba — EaglerCraft</h3><p>Componente planejado para acesso com clientes compatíveis com EaglerCraft, com hospedagem prevista na Oracle Cloud Free. Ainda não está anunciado como disponível.</p><span class="endpoint">wss://eaglercraft.centralmacatuba.qzz.io:443</span></article>
+          <article class="service-card service-card-game" data-category="jogos" data-search="eaglercraft relay retransmissao conexao render">
+            <div class="card-top"><span class="service-icon">33</span></div><h3>Central Macatuba — EaglerCraft Relay</h3><p>Serviço de relay separado do componente EaglerCraft, hospedado no Render gratuito.</p><span class="endpoint">wss://relay.eaglercraft.centralmacatuba.qzz.io</span></article>
+          <article class="service-card service-card-game" data-category="jogos" data-search="mcraft proxy minecraft">
+            <div class="card-top"><span class="service-icon">27</span><span class="status-badge status-planned">Em planejamento</span></div><h3>Central Macatuba — Mcraft Proxy</h3><p>Componente planejado para o ecossistema Mcraft, com hospedagem prevista na Oracle Cloud.</p><span class="endpoint">proxy.mcraft.centralmacatuba.qzz.io:443</span></article>
+          <article class="service-card service-card-game" data-category="jogos" data-search="mcraft maps mapas cloudflare pages r2">
+            <div class="card-top"><span class="service-icon">28</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Central Macatuba - Mcraft Maps</h3><p>Aplicação de mapas do ecossistema Mcraft, com recursos distribuídos por Cloudflare Pages e R2.</p><a href="https://maps.mcraft.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Acessar Mcraft Maps <span aria-hidden="true">→</span></a><a class="secondary-link" href="https://mcraft.r2.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Recursos R2 ↗</a></article>
+          <article class="service-card service-card-game" data-category="jogos" data-search="proxy texture texturas workers">
+            <div class="card-top"><span class="service-icon">29</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Central Macatuba - Mcraft Proxy Texture</h3><p>Serviço de recursos de textura, baseado em Cloudflare Workers.</p><a href="https://texture.proxy.mcraft.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Acessar Proxy Texture <span aria-hidden="true">→</span></a></article>
+          <article class="service-card service-card-game" data-category="jogos" data-search="p2p trystero peer to peer">
+            <div class="card-top"><span class="service-icon">30</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Central Macatuba - Mcraft P2P (Trystero)</h3><p>Componente de comunicação peer-to-peer que utiliza Trystero.</p><a href="https://p2p.mcraft.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Acessar P2P <span aria-hidden="true">→</span></a></article>
+          <article class="service-card service-card-game" data-category="jogos" data-search="peerjs legado p2p compatibilidade">
+            <div class="card-top"><span class="service-icon">31</span><span class="card-arrow" aria-hidden="true">↗</span></div><h3>Central Macatuba - Mcraft P2P (PeerJS Legado)</h3><p>Implementação legada de comunicação P2P, mantida separadamente do Trystero.</p><a href="https://p2p-peerjs.mcraft.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Acessar P2P legado <span aria-hidden="true">→</span></a></article>
+          <article class="service-card service-card-game" data-category="jogos" data-search="jogosee jogos ee servidor oficial desenvolvimento desenvolvedor ee">
+            <div class="card-top"><span class="service-icon">32</span><span class="status-badge status-development">Em desenvolvimento</span></div><h3>Central Macatuba — JogosEE</h3><p>A Central Macatuba será responsável por hospedar o servidor oficial do JogosEE em <code>jogosee.centralmacatuba.qzz.io</code>. O servidor ainda está em desenvolvimento.</p><a href="https://jogosee.centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Endereço planejado do servidor <span aria-hidden="true">↗</span></a><a class="secondary-link" href="https://github.com/desenvolvedor-ee/jogosEE" target="_blank" rel="noopener noreferrer">Desenvolvimento do servidor e dos jogos no GitHub ↗</a></article>
+        </div>
+        <div id="empty-state" class="empty-state" hidden>Nenhum serviço corresponde à sua pesquisa. Tente outro termo ou filtro.</div>
+        <p class="catalog-note">Os endereços e estados são apresentados com base nas informações do projeto. Alguns componentes podem estar em planejamento, em desenvolvimento ou temporariamente indisponíveis. A Central Macatuba não garante a disponibilidade contínua de serviços de provedores externos.</p>
+      </div>
+    </section>
+
+    <section id="infraestrutura" class="section infrastructure-section">
+      <div class="container infra-grid">
+        <div>
+          <p class="section-kicker">03 / Como funciona</p>
+          <h2>Uma arquitetura conectada.<br><span>Uma infraestrutura distribuída.</span></h2>
+          <p class="section-description">A Central Macatuba organiza diferentes aplicações, APIs, dados e interfaces em um ecossistema modular. Cada componente pode utilizar um provedor adequado à sua função.</p>
+          <a class="text-link" href="#transparencia">Entenda a infraestrutura <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="provider-list">
+          <div class="provider-item"><span class="provider-symbol">01</span><div><h3>Hospedagem web</h3><p>FreeHostia e MyOwnFreeHost para componentes de sites e hospedagem.</p></div></div>
+          <div class="provider-item"><span class="provider-symbol">02</span><div><h3>Aplicações e APIs</h3><p>Render e outros serviços gratuitos para aplicações e interfaces de programação.</p></div></div>
+          <div class="provider-item"><span class="provider-symbol">03</span><div><h3>Distribuição e armazenamento</h3><p>Cloudflare Pages, Workers e R2 para aplicações e recursos digitais.</p></div></div>
+          <div class="provider-item"><span class="provider-symbol">04</span><div><h3>Comunidade e conhecimento</h3><p>Discourse e Miraheze para fórum e wiki, além do GitHub Pages para páginas e status.</p></div></div>
+          <div class="provider-item"><span class="provider-symbol">05</span><div><h3>Projetos de jogos</h3><p>Oracle Cloud prevista para o servidor Minecraft e o Mcraft Proxy.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="desenvolvedores" class="section developer-section">
+      <div class="container developer-panel">
+        <div class="developer-copy">
+          <p class="section-kicker">04 / Para desenvolvedores</p>
+          <h2>Integre. Consulte.<br><span>Construa.</span></h2>
+          <p>Encontre a documentação e os repositórios públicos que apoiam o ecossistema Central Macatuba.</p><p>A documentação da API pública descreve os recursos destinados a integrações públicas; ela não significa que todos os endpoints estejam disponíveis sem autenticação. APIs e recursos privados não são divulgados como pontos de acesso público neste catálogo.</p>
+        </div>
+        <div class="developer-links">
+          <a href="https://centralmacatuba.qzz.io" target="_blank" rel="noopener noreferrer"><span><strong>Central Macatuba</strong><small>Site</small></span><span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/centralmacatuba/api-publica-docs" target="_blank" rel="noopener noreferrer"><span><strong>Documentação da API pública</strong><small>Swagger UI e especificação OpenAPI</small></span><span aria-hidden="true">↗</span></a>
+          <a href="https://websub.centralmacatuba.qzz.io/hub" target="_blank" rel="noopener noreferrer"><span><strong>Central Macatuba - WebSub HUB</strong><small>Endpoint /hub para notificações entre publicadores e assinantes</small></span><span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/centralmacatuba" target="_blank" rel="noopener noreferrer"><span><strong>Repositórios da Central Macatuba</strong><small>Código-fonte e projetos públicos</small></span><span aria-hidden="true">↗</span></a>
+          <a href="https://github.com/desenvolvedor-ee" target="_blank" rel="noopener noreferrer"><span><strong>Desenvolvedor EE</strong><small>Perfil do desenvolvedor</small></span><span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="transparencia" class="section transparency-section">
+      <div class="container transparency-grid">
+        <div>
+          <p class="section-kicker">05 / Transparência</p>
+          <h2>Independente por princípio.<br><span>Transparente por escolha.</span></h2>
+        </div>
+        <div class="transparency-copy">
+          <p>A Central Macatuba é desenvolvida por Dev EE como um projeto independente. Não representa, não fala em nome e não possui vínculo institucional com a Prefeitura Municipal de Macatuba.</p>
+          <p>O ecossistema é construído com serviços gratuitos disponibilizados por provedores externos. A gratuidade, os limites de uso, os recursos e as condições desses provedores podem mudar. Alguns componentes podem estar em desenvolvimento ou depender de infraestrutura de terceiros.</p><p>Os domínios principais utilizados são <a href="https://centralmacatuba.qzz.io/">centralmacatuba.qzz.io</a> e <a href="https://centralmacatuba.dpdns.org/">centralmacatuba.dpdns.org</a>. Os componentes podem ser acessados por caminhos no domínio principal ou por subdomínios específicos, conforme a configuração de cada serviço. O caminho <code>/</code> representa a raiz do domínio.</p>
+          <p>Os nomes e marcas dos provedores pertencem aos seus respectivos titulares. A utilização de uma plataforma externa não significa patrocínio, parceria ou endosso por parte dela.</p>
+          <div class="transparency-tags"><span>Projeto independente</span><span>Desenvolvido por Dev EE</span><span>Serviços gratuitos de terceiros</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-cta">
+      <div class="container closing-inner">
+        <div><p class="section-kicker">Central Macatuba</p><h2>Descubra o ecossistema.</h2><p>Explore os serviços e acompanhe a evolução do projeto.</p></div>
+        <a class="button button-light" href="https://centralmacatuba.qzz.io/" target="_blank" rel="noopener noreferrer">Acessar a Central <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <a class="brand footer-brand" href="#inicio"><span class="brand-mark" aria-hidden="true">CM</span><span class="brand-name">Central <strong>Macatuba</strong></span></a>
+      <p>Um ecossistema digital independente desenvolvido por Desenvolvedor EE (Dev EE).</p>
+      <nav aria-label="Links do rodapé"><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#transparencia">Transparência</a><a href="https://github.com/centralmacatuba" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="current-year">2026</span> Central Macatuba</span><span>Projeto independente — sem vínculo com a Prefeitura Municipal de Macatuba.</span><a href="#inicio">Voltar ao topo ↑</a></div>
+  </footer>
 </body>
 </html>
